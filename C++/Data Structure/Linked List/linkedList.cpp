@@ -45,6 +45,36 @@ class Linked_list {
             tmp = tmp -> next;
         }
     }
+    void deleteNode(int x)
+    {
+        if(head == NULL)
+        {
+            cout<<"Linked List is empty"<<endl;
+            return;
+        }
+        if(head->data == x)
+        {
+            node* temp = head;
+            head = head->next;
+            delete(temp);
+            return;
+        }
+        Node* curr = head;
+        while(curr->next && curr->next->data != x)
+        {
+            curr = curr->next;
+        }
+        if(curr->next == NULL)
+        {
+            cout<<"Element Not Found To Delete"<<"\n";
+        }
+        else
+        {
+            node* temp = curr->next;
+            curr->next = curr->next->next;
+            delete(temp);
+        }
+    }
 };
 
 int main() {
