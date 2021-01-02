@@ -59,7 +59,7 @@ class Linked_list {
             delete(temp);
             return;
         }
-        Node* curr = head;
+        node* curr = head;
         while(curr->next && curr->next->data != x)
         {
             curr = curr->next;
